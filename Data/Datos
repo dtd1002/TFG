@@ -1,1 +1,29 @@
+ /data
+
+Este directorio contiene los archivos `.txt` necesarios para la identificación del modelo en **Control Station** a partir de datos simulados en Simulink.
+
+## 📄 Descripción de los archivos
+
+| Archivo           | Descripción                                                                                      | Función de transferencia asociada |
+|-------------------|--------------------------------------------------------------------------------------------------|------------------------------------|
+| `myData_proc.txt` | Datos del sistema ante un **salto de insulina**. Incluye entrada (insulina) y salida (glucosa). | \( G(s) \)                         |
+| `myData_pert.txt` | Datos del sistema ante una **perturbación por ingesta**. Entrada (comida) y salida (glucosa).   | \( G_p(s) \)                       |
+
+Ambos ficheros están organizados en columnas con los siguientes datos:
+- **Tiempo**
+- **Entrada**
+- **Salida**
+
+El separador utilizado es tabulador (`\t`), formato requerido por Control Station.
+
+## 🛠 Uso en Control Station
+
+Estos archivos se deben importar en Control Station para realizar la identificación de funciones de transferencia del sistema bajo:
+- Condiciones normales (sin perturbación): `myData_proc.txt`
+- Presencia de perturbación (ingesta): `myData_pert.txt`
+
+Las funciones obtenidas se utilizan posteriormente para implementar estrategias de control como:
+- **Control clásico** con realimentación.
+- **Control anticipativo (feedforward)** para compensar el efecto de la ingesta.
+
 
