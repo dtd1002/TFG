@@ -13,16 +13,11 @@ Ambos ficheros están organizados en columnas con los siguientes datos:
 - Entrada
 - Salida
 
-El separador utilizado es tabulador (`\t`), formato requerido por Control Station.
-
 Uso en Control Station
 
-Estos archivos se deben importar en Control Station para realizar la identificación de funciones de transferencia del sistema bajo:
-- Condiciones normales (sin perturbación): `myData.txt`
-- Presencia de perturbación (ingesta): `myData_pert.txt`
 
 Las funciones obtenidas se utilizan posteriormente para implementar estrategias de control como:
-- Control clásico con realimentación.
+- Control con PS.
 - Control anticipativo (feedforward) para compensar el efecto de la ingesta.
 
 
